@@ -118,7 +118,7 @@ namespace spotify_auto_pause
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
         {
             tTimer.Enabled = checkBox3.Checked;
-            checkBox3.Text = tTimer.Enabled ? "" : "";
+            checkBox3.Text = tTimer.Enabled ? "Enabled" : "Disabled";
         }
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)

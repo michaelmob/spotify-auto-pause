@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.gbAdvanced = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.cbAdvanced = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
@@ -47,8 +49,6 @@
             this.nSilenceDuration = new System.Windows.Forms.NumericUpDown();
             this.cbStatus = new System.Windows.Forms.CheckBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.gbAdvanced.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nDetectInterval)).BeginInit();
@@ -72,6 +72,24 @@
             this.gbAdvanced.Text = "Advanced";
             this.gbAdvanced.Visible = false;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 20);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(94, 13);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Spotify Processes:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(106, 17);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(369, 20);
+            this.textBox1.TabIndex = 0;
+            this.textBox1.Text = "Spotify,";
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // cbAdvanced
             // 
             this.cbAdvanced.AutoSize = true;
@@ -91,6 +109,7 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.Checked = true;
             this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox1.Enabled = false;
             this.checkBox1.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.checkBox1.Location = new System.Drawing.Point(3, 4);
             this.checkBox1.Name = "checkBox1";
@@ -104,6 +123,7 @@
             this.checkBox2.AutoSize = true;
             this.checkBox2.Checked = true;
             this.checkBox2.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox2.Enabled = false;
             this.checkBox2.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.checkBox2.Location = new System.Drawing.Point(3, 53);
             this.checkBox2.Name = "checkBox2";
@@ -251,28 +271,10 @@
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(126, 24);
             this.checkBox3.TabIndex = 13;
-            this.checkBox3.Text = "Timer";
+            this.checkBox3.Text = "Enabled";
             this.checkBox3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.checkBox3.UseVisualStyleBackColor = true;
             this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(106, 17);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(369, 20);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "Spotify,";
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 20);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(94, 13);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Spotify Processes:";
             // 
             // linkLabel1
             // 
