@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.cmMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.gbAdvanced = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -51,7 +52,6 @@
             this.cbStatus = new System.Windows.Forms.CheckBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.cmMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.notifyIcon2 = new System.Windows.Forms.NotifyIcon(this.components);
             this.gbAdvanced.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nDetectInterval)).BeginInit();
@@ -66,8 +66,12 @@
             this.notifyIcon1.ContextMenuStrip = this.cmMenu;
             this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
             this.notifyIcon1.Text = "Spotify Auto-Pause: Playing";
-            this.notifyIcon1.Click += new System.EventHandler(this.notifyIcon1_Click);
-            this.notifyIcon1.DoubleClick += new System.EventHandler(this.notifyIcon1_Click);
+            this.notifyIcon1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseClick);
+            // 
+            // cmMenu
+            // 
+            this.cmMenu.Name = "cmMenu";
+            this.cmMenu.Size = new System.Drawing.Size(61, 4);
             // 
             // gbAdvanced
             // 
@@ -294,18 +298,12 @@
             this.linkLabel1.Text = "GitHub";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
-            // cmMenu
-            // 
-            this.cmMenu.Name = "cmMenu";
-            this.cmMenu.Size = new System.Drawing.Size(61, 4);
-            // 
             // notifyIcon2
             // 
             this.notifyIcon2.ContextMenuStrip = this.cmMenu;
             this.notifyIcon2.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon2.Icon")));
             this.notifyIcon2.Text = "Spotify Auto-Pause: Paused";
-            this.notifyIcon2.Click += new System.EventHandler(this.notifyIcon1_Click);
-            this.notifyIcon2.DoubleClick += new System.EventHandler(this.notifyIcon1_Click);
+            this.notifyIcon2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseClick);
             // 
             // Form1
             // 
@@ -328,7 +326,6 @@
             this.Controls.Add(this.gbAdvanced);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.ShowInTaskbar = false;
             this.Text = "Spotify Auto-Pause 0.1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Resize += new System.EventHandler(this.Form1_Resize);

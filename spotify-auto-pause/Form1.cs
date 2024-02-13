@@ -144,13 +144,7 @@ namespace spotify_auto_pause
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            // https://github.com/michaelmob/spotify-auto-pause
             Process.Start("https://github.com/michaelmob/spotify-auto-pause");
-        }
-
-        private void notifyIcon1_Click(object sender, EventArgs e)
-        {
-            this.Show();
         }
 
         private void Form1_Resize(object sender, EventArgs e)
@@ -161,6 +155,12 @@ namespace spotify_auto_pause
                 notifyIcon1.Visible = true;
                 Hide();
             }
+        }
+
+        private void notifyIcon1_MouseClick(object sender, MouseEventArgs e)
+        {
+            Show();
+            Focus();
         }
     }
 }
