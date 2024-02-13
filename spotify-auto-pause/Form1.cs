@@ -113,12 +113,18 @@ namespace spotify_auto_pause
             foreach (ListViewItem item in listView1.Items)
                 if (item.Checked)
                     Class1.SendP(Convert.ToInt32(item.SubItems[1].Text), cbStatus.Checked);
+
+            notifyIcon1.Visible = cbStatus.Checked;
+            notifyIcon2.Visible = !cbStatus.Checked;
         }
 
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
         {
             tTimer.Enabled = checkBox3.Checked;
             checkBox3.Text = tTimer.Enabled ? "Enabled" : "Disabled";
+
+            notifyIcon1.Visible = false;
+            notifyIcon2.Visible = false;
         }
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
@@ -140,6 +146,21 @@ namespace spotify_auto_pause
         {
             // https://github.com/michaelmob/spotify-auto-pause
             Process.Start("https://github.com/michaelmob/spotify-auto-pause");
+        }
+
+        private void notifyIcon1_Click(object sender, EventArgs e)
+        {
+            this.Show();
+        }
+
+        private void Form1_Resize(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Minimized)
+            {
+                WindowState = FormWindowState.Normal;
+                notifyIcon1.Visible = true;
+                Hide();
+            }
         }
     }
 }
